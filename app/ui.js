@@ -973,7 +973,8 @@ const UI = {
 
         const host = UI.getSetting('host');
         const port = UI.getSetting('port');
-        const path = UI.getSetting('path');
+        // const path = UI.getSetting('path');
+        const path = window.location.pathname.replace(/[^/]*$/, '').substring(1) + UI.getSetting('path');
 
         if (typeof password === 'undefined') {
             password = WebUtil.getConfigVar('password');
